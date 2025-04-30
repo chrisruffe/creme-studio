@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crème Studio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Dynamic Nav Underline Effect */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: currentColor;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    /* Smooth fade-in effect for sections */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="bg-neutral-100 text-neutral-800 font-sans">
+  <!-- Navigation -->
+  <header class="sticky top-0 bg-white shadow z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold tracking-tight">Crème Studio</h1>
+      <nav class="space-x-6 text-lg">
+        <a href="#about" class="nav-link hover:text-neutral-600">About</a>
+        <a href="#projects" class="nav-link hover:text-neutral-600">Projects</a>
+        <a href="#contact" class="nav-link hover:text-neutral-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="h-screen bg-[url('https://source.unsplash.com/1600x900/?design,studio')] bg-cover bg-center flex items-center justify-center">
+    <div class="bg-white bg-opacity-80 p-8 rounded-xl shadow-xl text-center">
+      <h2 class="text-4xl font-semibold mb-4">Elevated Objects. Intentional Design.</h2>
+      <p class="text-lg max-w-md mx-auto">Crème Studio is an industrial design practice shaping thoughtful experiences through refined physical form.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-4 max-w-4xl mx-auto fade-in">
+    <h3 class="text-3xl font-bold mb-6">About Us</h3>
+    <p class="text-lg leading-relaxed">Founded on principles of clarity and restraint, Crème Studio delivers enduring products and systems for brands that value design as a differentiator. From early ideation to final detailing, we collaborate closely with clients to bring elegant solutions into the world.</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 px-4 bg-white fade-in">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-3xl font-bold mb-10 text-center">Selected Projects</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-neutral-200 rounded-lg p-4 hover:shadow-lg transition">
+          <h4 class="font-semibold text-xl mb-2">Minimal Lamp</h4>
+          <p class="text-sm text-neutral-600">A modular lighting system combining sculptural form and sustainable material choices.</p>
+        </div>
+        <div class="bg-neutral-200 rounded-lg p-4 hover:shadow-lg transition">
+          <h4 class="font-semibold text-xl mb-2">Stack Stool</h4>
+          <p class="text-sm text-neutral-600">Precision-machined aluminium and ash timber seat for hospitality environments.</p>
+        </div>
+        <div class="bg-neutral-200 rounded-lg p-4 hover:shadow-lg transition">
+          <h4 class="font-semibold text-xl mb-2">Interface Tray</h4>
+          <p class="text-sm text-neutral-600">An organizational tool that blends utility and aesthetic balance on the desktop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-4 max-w-3xl mx-auto fade-in">
+    <h3 class="text-3xl font-bold mb-6">Get in Touch</h3>
+    <p class="mb-4 text-lg">We’re currently accepting new projects. For collaborations or enquiries, send us a message below.</p>
+    <form class="space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full p-3 border rounded" />
+      <input type="email" placeholder="Your Email" class="w-full p-3 border rounded" />
+      <textarea placeholder="Your Message" class="w-full p-3 border rounded h-32"></textarea>
+      <button type="submit" class="bg-black text-white px-6 py-3 rounded hover:bg-neutral-800 transition">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-neutral-500 py-10">
+    © 2025 Crème Studio. All rights reserved.
+  </footer>
+</body>
+</html>
