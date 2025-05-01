@@ -31,17 +31,19 @@
         crème studio
       </button>
     </div>
-  </div></section>
+  </section>
 
   <!-- About Section -->
-  <section id="about" class="min-h-screen flex items-center justify-center hidden-section fade px-6 text-center"><div class='max-w-2xl'>
+  <section id="about" class="h-screen flex items-center justify-center hidden-section fade px-6 text-center">
+    <div class="max-w-2xl mx-auto">
     <h2 class="text-2xl font-medium mb-4">about</h2>
     <p class="text-base leading-relaxed mb-8">crème studio is an industrial design practice shaping thoughtful experiences through refined physical form. From early ideation to final detailing, we collaborate closely with brands to deliver product systems rooted in clarity and restraint.</p>
     <button onclick="showSection('projects')" class="underline text-sm">view projects</button>
   </div></section>
 
   <!-- Projects Section -->
-  <section id="projects" class="min-h-screen flex items-center justify-center hidden-section fade px-6 text-center"><div class='max-w-6xl'>
+  <section id="projects" class="h-screen flex items-center justify-center hidden-section fade px-6 text-center">
+    <div class="max-w-3xl mx-auto">
     <h2 class="text-2xl font-medium mb-10">projects</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       <button onclick="showSection('contact')" class="aspect-square bg-neutral-200 hover:opacity-70 transition-opacity flex items-center justify-center">
@@ -57,7 +59,8 @@
   </div></section>
 
   <!-- Contact Section -->
-  <section id="contact" class="min-h-screen flex items-center justify-center hidden-section fade px-6 text-center"><div class='max-w-2xl'>
+  <section id="contact" class="h-screen flex items-center justify-center hidden-section fade px-6 text-center">
+    <div class="max-w-2xl mx-auto">
     <h2 class="text-2xl font-medium mb-6">contact</h2>
     <p class="text-base mb-8">for project enquiries or collaborations, please send us a message.</p>
     <form class="space-y-4 text-sm">
@@ -85,5 +88,3 @@
       setTimeout(() => target.classList.add('show'), 10);
     }
   </script>
-</body>
-</html>
