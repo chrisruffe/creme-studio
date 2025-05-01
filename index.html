@@ -5,71 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>crème studio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Anton', sans-serif;
+      font-family: 'Inter', sans-serif;
     }
-    .fade-in {
+    .hidden-section {
+      display: none;
+    }
+    .fade {
       opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s forwards;
+      transition: opacity 0.5s ease;
     }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .fade.show {
+      display: block;
+      opacity: 1;
     }
   </style>
 </head>
 <body class="bg-white text-neutral-900 tracking-tight">
-  <!-- Hero Section as Landing Page -->
-  <section class="h-screen flex items-center justify-center text-center">
+  <!-- Logo Entry Page -->
+  <section id="logo" class="h-screen flex items-center justify-center text-center">
     <div>
-      <a href="#about" class="text-7xl md:text-9xl font-bold tracking-wide hover:opacity-70 transition-opacity block">
+      <button onclick="showSection('about')" class="text-7xl md:text-9xl font-[anton] tracking-wide hover:opacity-70 transition-opacity">
         crème studio
-      </a>
+      </button>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-28 px-6 max-w-2xl mx-auto fade-in">
-    <h2 class="text-2xl font-bold mb-6 text-center">About</h2>
-    <p class="text-lg leading-relaxed text-center">crème studio is an industrial design practice shaping thoughtful experiences through refined physical form. From early ideation to final detailing, we collaborate closely with brands to deliver product systems rooted in clarity and restraint.</p>
+  <section id="about" class="hidden-section fade px-6 max-w-2xl mx-auto text-center">
+    <h2 class="text-2xl font-medium mb-4">about</h2>
+    <p class="text-base leading-relaxed mb-8">crème studio is an industrial design practice shaping thoughtful experiences through refined physical form. From early ideation to final detailing, we collaborate closely with brands to deliver product systems rooted in clarity and restraint.</p>
+    <button onclick="showSection('projects')" class="underline text-sm">view projects</button>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-28 px-6 fade-in">
-    <h2 class="text-2xl font-bold uppercase text-center mb-10">Projects</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <div class="aspect-square bg-neutral-200 hover:opacity-70 transition-opacity flex items-center justify-center">
-        <span class="text-base">Minimal Lamp</span>
-      </div>
-      <div class="aspect-square bg-neutral-200 hover:opacity-70 transition-opacity flex items-center justify-center">
-        <span class="text-base uppercase">Stack Stool</span>
-      </div>
-      <div class="aspect-square bg-neutral-200 hover:opacity-70 transition-opacity flex items-center justify-center">
-        <span class="text-base uppercase">Interface Tray</span>
-      </div>
+  <section id="projects" class="hidden-section fade px-6 max-w-6xl mx-auto text-center">
+    <h2 class="text-2xl font-medium mb-10">projects</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <button onclick="showSection('contact')" class="aspect-square bg-neutral-200 hover:opacity-70 transition-opacity flex items-center justify-center">
+        <span class="text-sm">minimal lamp</span>
+      </button>
+      <button onclick="showSection('contact')" class="aspect-square bg-neutral-200 hover:opacity-70 transition-opacity flex items-center justify-center">
+        <span class="text-sm">stack stool</span>
+      </button>
+      <button onclick="showSection('contact')" class="aspect-square bg-neutral-200 hover:opacity-70 transition-opacity flex items-center justify-center">
+        <span class="text-sm">interface tray</span>
+      </button>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-28 px-6 max-w-2xl mx-auto fade-in">
-    <h2 class="text-2xl font-bold uppercase text-center mb-6">Contact</h2>
-    <p class="text-lg text-center mb-8">For project enquiries or collaborations, please send us a message.</p>
-    <form class="space-y-4 text-base">
-      <input type="text" placeholder="Your Name" class="w-full border border-neutral-300 px-4 py-3 bg-white focus:outline-none" />
-      <input type="email" placeholder="Your Email" class="w-full border border-neutral-300 px-4 py-3 bg-white focus:outline-none" />
-      <textarea placeholder="Your Message" class="w-full border border-neutral-300 px-4 py-3 bg-white h-32 resize-none focus:outline-none"></textarea>
-      <button type="submit" class="block w-full border border-black px-4 py-3 text-black tracking-widest hover:bg-black hover:text-white transition">Send</button>
+  <section id="contact" class="hidden-section fade px-6 max-w-2xl mx-auto text-center">
+    <h2 class="text-2xl font-medium mb-6">contact</h2>
+    <p class="text-base mb-8">for project enquiries or collaborations, please send us a message.</p>
+    <form class="space-y-4 text-sm">
+      <input type="text" placeholder="your name" class="w-full border border-neutral-300 px-4 py-3 bg-white focus:outline-none" />
+      <input type="email" placeholder="your email" class="w-full border border-neutral-300 px-4 py-3 bg-white focus:outline-none" />
+      <textarea placeholder="your message" class="w-full border border-neutral-300 px-4 py-3 bg-white h-32 resize-none focus:outline-none"></textarea>
+      <button type="submit" class="block w-full border border-black px-4 py-3 text-black hover:bg-black hover:text-white transition">send</button>
     </form>
+    <button onclick="showSection('logo')" class="block mt-8 text-xs underline">return to home</button>
   </section>
 
-  <!-- Footer -->
-  <footer class="text-center text-xs text-neutral-500 py-12">
-    © 2025 crème studio. All rights reserved.
-  </footer>
+  <script>
+    function showSection(id) {
+      const sections = ['logo', 'about', 'projects', 'contact'];
+      sections.forEach(sec => {
+        const el = document.getElementById(sec);
+        el.classList.remove('show');
+        el.classList.add('fade');
+        if (sec !== id) {
+          el.style.display = 'none';
+        }
+      });
+      const target = document.getElementById(id);
+      target.style.display = 'block';
+      setTimeout(() => target.classList.add('show'), 10);
+    }
+  </script>
 </body>
 </html>
